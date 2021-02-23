@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { makeStyles, Hidden } from '@material-ui/core';
 import NavBar from './components/Navbar';
 import Drawer from './components/Drawer';
-import Content from './components/Content';
+import CarouselComp from './components/Carousel';
+import Card from './components/Card';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -12,11 +13,22 @@ const useStyles = makeStyles(theme => ({
   flexGrow: {
     flexGrow: "1",
   },toolbar: theme.mixins.toolbar,
-      content: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.default,
-        padding: theme.spacing(3),
-      },
+  content: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.default,
+    padding: theme.spacing(3),
+  },
+  card: {
+    width: "100%",
+    height: "200px",
+    background: "#333",
+    color: "#fff",
+    fontSize: "30px",
+    margin: "0 20px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }
 }))
 
 const pages = [
@@ -68,7 +80,8 @@ const Home = () => {
             </Hidden>
             <div className={classes.content}>
                 <div className={classes.toolbar}></div>
-                <Content/>
+                <CarouselComp>
+                </CarouselComp>
             </div>
         </div>
     )

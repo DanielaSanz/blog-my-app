@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core';
 import { AppBar, Toolbar, Typography, IconButton, Button, Hidden, List, ListItem} from '@material-ui/core';
@@ -38,6 +38,12 @@ const NavBar = (props) => {
 
     const classes = useStyles();
 
+    const history = useHistory();
+
+    const handleRedirectHomeClick = () => {
+        history.push(`institutional`);
+      };
+
     return(
         <AppBar className={classes.appBar}>
             <Toolbar>
@@ -48,9 +54,18 @@ const NavBar = (props) => {
                     onClick={() => props.handleOpenToggle()}
                 >
                     <MenuIcon />
-                </IconButton> 
-                <Typography variant="h6" className={classes.title}>
-                    Reina Marla
+                </IconButton>
+                <Typography 
+                    variant="h6" 
+                    className={classes.title}
+                    to='/home'
+                >
+                    <Button
+                        color="inherit"
+                        onClick={handleRedirectHomeClick}
+                    >
+                     Reina Marla   
+                    </Button>
                 </Typography>
                 <Button
                     color="inherit"
