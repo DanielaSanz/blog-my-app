@@ -1,6 +1,9 @@
-import React from 'react';
-import { makeStyles, Drawer, Divider } from '@material-ui/core';
-import Lists from './Lists';
+
+import React, { forwardRef }  from 'react';
+import { NavLink } from 'react-router-dom';
+import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core';
+import {List, Drawer, Divider, Button} from '@material-ui/core';
 
 const useStyles = makeStyles(theme =>({
     drawer: {
@@ -13,7 +16,17 @@ const useStyles = makeStyles(theme =>({
     toolbar: theme.mixins.toolbar,
 }))
 
+const CustomRouterLink = forwardRef((props, ref) => (
+    <div
+      ref={ref}
+      style={{ flexGrow: 1 }}
+    >
+      <NavLink {...props} />
+    </div>
+  ));
+
 const DrawerComp = (props) => {
+    const { pages, className, ...rest } = props;
     const classes = useStyles();
 
     return(
@@ -29,7 +42,22 @@ const DrawerComp = (props) => {
         >
             <div className={classes.toolbar}></div>
             <Divider/>
-            <Lists/>
+            <List
+                {...rest}
+                className={clsx(classes.root, className)}
+             >
+                {pages.map(page => (
+                    <Button
+                        color="inherit"
+                        component={CustomRouterLink}
+                        to={page.href}
+                    >
+                        <div>
+                            {page.title}
+                        </div>
+                    </Button>
+                 ))}
+            </List>
         </Drawer>
     )
 }

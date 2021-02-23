@@ -5,16 +5,38 @@ import Drawer from './components/Drawer';
 import Content from './components/Content';
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        display: 'flex',
-      },
-      toolbar: theme.mixins.toolbar,
+  root: {
+    boxShadow: 'none',
+    marginRight:"0vw",
+  },
+  flexGrow: {
+    flexGrow: "1",
+  },toolbar: theme.mixins.toolbar,
       content: {
         flexGrow: 1,
         backgroundColor: theme.palette.background.default,
         padding: theme.spacing(3),
       },
 }))
+
+const pages = [
+    {
+      title: 'Secciones',
+      href: '/sections',
+    },
+    {
+      title: 'Comunidad',
+      href: '/community',
+    },
+    {
+      title: 'Institucional',
+      href: '/institutional',
+    },
+    {
+      title: 'Contactanos',
+      href: '/contact',
+    }
+  ];
 
 const Home = () => {
     const classes = useStyles();
@@ -26,15 +48,19 @@ const Home = () => {
 
     return(
         <div className={classes.root}>
-            <NavBar handleOpenToggle={handleOpenToggle}/>
-            <Hidden xsDown>
+            <NavBar 
+            pages={pages}
+            handleOpenToggle={handleOpenToggle}/>
+            {/* <Hidden xsDown>
                 <Drawer
+                    pages={pages}
                     variant="permanent"
                     open={true}
                 />
-            </Hidden>
-            <Hidden smUp>
+            </Hidden>  */}
+            <Hidden mdUp>
                 <Drawer
+                    pages={pages}
                     variant="temporary"
                     open={open}
                     onClose={handleOpenToggle}
