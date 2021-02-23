@@ -2,19 +2,53 @@ import React, { useState } from 'react';
 import { makeStyles, Hidden } from '@material-ui/core';
 import NavBar from './components/Navbar';
 import Drawer from './components/Drawer';
-import Content from './components/Content';
+import CarouselComp from './components/Carousel';
+import Card from './components/Card';
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        display: 'flex',
-      },
-      toolbar: theme.mixins.toolbar,
-      content: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.default,
-        padding: theme.spacing(3),
-      },
+  root: {
+    boxShadow: 'none',
+    marginRight:"0vw",
+  },
+  flexGrow: {
+    flexGrow: "1",
+  },toolbar: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.default,
+    padding: theme.spacing(3),
+  },
+  card: {
+    width: "100%",
+    height: "200px",
+    background: "#333",
+    color: "#fff",
+    fontSize: "30px",
+    margin: "0 20px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }
 }))
+
+const pages = [
+    {
+      title: 'Secciones',
+      href: '/sections',
+    },
+    {
+      title: 'Comunidad',
+      href: '/community',
+    },
+    {
+      title: 'Institucional',
+      href: '/institutional',
+    },
+    {
+      title: 'Contactanos',
+      href: '/contact',
+    }
+  ];
 
 const Home = () => {
     const classes = useStyles();
@@ -26,15 +60,19 @@ const Home = () => {
 
     return(
         <div className={classes.root}>
-            <NavBar handleOpenToggle={handleOpenToggle}/>
-            <Hidden xsDown>
+            <NavBar 
+            pages={pages}
+            handleOpenToggle={handleOpenToggle}/>
+            {/* <Hidden xsDown>
                 <Drawer
+                    pages={pages}
                     variant="permanent"
                     open={true}
                 />
-            </Hidden>
-            <Hidden smUp>
+            </Hidden>  */}
+            <Hidden mdUp>
                 <Drawer
+                    pages={pages}
                     variant="temporary"
                     open={open}
                     onClose={handleOpenToggle}
@@ -42,7 +80,8 @@ const Home = () => {
             </Hidden>
             <div className={classes.content}>
                 <div className={classes.toolbar}></div>
-                <Content/>
+                <CarouselComp>
+                </CarouselComp>
             </div>
         </div>
     )
