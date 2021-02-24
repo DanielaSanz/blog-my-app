@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
-import Navbar from '../Home/components/Navbar';
 
 const Institutional = () => {
     return (

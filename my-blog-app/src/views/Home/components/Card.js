@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles (theme => ({
     card: {
         width: "100%",
-        height: "200px",
+        height: "400px",
         background: "#333",
         color: "#fff",
         fontSize: "30px",
@@ -18,6 +18,7 @@ const useStyles = makeStyles (theme => ({
 
 const Card = ({ number }) => {
     const classes = useStyles();
+    
     return (
         <div className={classes.card}>{number}</div>
     )    

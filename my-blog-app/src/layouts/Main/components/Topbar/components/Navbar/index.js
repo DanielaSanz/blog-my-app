@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core';
-import { AppBar, Toolbar, Typography, IconButton, Button, Hidden, List, ListItem} from '@material-ui/core';
+import { AppBar, Toolbar, Typography, IconButton, Button, Hidden } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles((theme) => ({
@@ -45,8 +45,7 @@ const NavBar = (props) => {
       };
 
     return(
-        <AppBar className={classes.appBar}>
-            <Toolbar>
+            <>
                 <IconButton 
                     className={classes.menuButton} 
                     color="inherit" 
@@ -57,8 +56,8 @@ const NavBar = (props) => {
                 </IconButton>
                 <Typography 
                     variant="h6" 
+                    color="inherit"
                     className={classes.title}
-                    to='/home'
                 >
                     <Button
                         color="inherit"
@@ -86,8 +85,7 @@ const NavBar = (props) => {
                         </Hidden>
                     ))}
                 </Button>
-            </Toolbar>
-        </AppBar>
+         </>       
     )
 }
 
