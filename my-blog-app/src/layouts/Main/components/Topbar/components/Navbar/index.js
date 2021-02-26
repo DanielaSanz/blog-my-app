@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core';
-import { AppBar, Toolbar, Typography, IconButton, Button, Hidden } from '@material-ui/core';
+import { Typography, IconButton, Button, Hidden } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,13 +15,6 @@ const useStyles = makeStyles((theme) => ({
     title: {
         flexGrow: 1,
     },
-    appBar: {
-        //TODO si esto no esta el appBar ocupa toda la pantalla
-        /* [theme.breakpoints.up('sm')]: {
-          width: `calc(100% - ${240}px)`,
-          marginLeft: 240,
-        }, */
-      },
 })); 
 
 const CustomRouterLink = forwardRef((props, ref) => (
@@ -41,7 +34,7 @@ const NavBar = (props) => {
     const history = useHistory();
 
     const handleRedirectHomeClick = () => {
-        history.push(`institutional`);
+        history.push(`home`);
       };
 
     return(
@@ -72,7 +65,7 @@ const NavBar = (props) => {
                     className={clsx(classes.root, className)}
                 >
                     {pages.map(page => (
-                        <Hidden smDown>
+                        <Hidden xsDown>
                             <Button
                                 color="inherit"
                                 component={CustomRouterLink}

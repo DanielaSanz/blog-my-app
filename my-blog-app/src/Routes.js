@@ -1,10 +1,7 @@
-import { Switch, Redirect } from "react-router-dom";
-import { RouteWithLayout } from "./components";
-import { Main } from "./layouts";
-import {
-  Home,
-  Institutional,
-} from "./views";
+import { Switch, Redirect } from 'react-router-dom';
+import { RouteWithLayout } from './components';
+import { Main } from './layouts';
+import { Home, Institutional } from './views';
 
 const Routes = () => {
   return (
@@ -29,4 +26,3 @@ const Routes = () => {
 };
 
 export default Routes;
-

@@ -3,7 +3,7 @@ import React, { forwardRef }  from 'react';
 import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core';
-import { List, Drawer, Divider, Button} from '@material-ui/core';
+import { Hidden, List, Drawer, Divider, Button} from '@material-ui/core';
 
 const useStyles = makeStyles(theme =>({
     drawer: {
@@ -30,7 +30,8 @@ const DrawerComp = (props) => {
     const classes = useStyles();
 
     return(
-        <Drawer 
+        <Hidden smUp>
+            <Drawer 
             className={classes.drawer}
             classes={{
                 paper: classes.drawerPaper,
@@ -59,6 +60,7 @@ const DrawerComp = (props) => {
                  ))}
             </List>
         </Drawer>
+        </Hidden>
     )
 }
 

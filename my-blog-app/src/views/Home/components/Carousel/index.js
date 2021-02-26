@@ -5,7 +5,7 @@ import Card from './Card';
 const CarouselComp = () => {
 
     return (
-      <Carousel >
+      <Carousel>
         <Card number="1"/>
         <Card number="2"/>
         <Card number="3"/>
