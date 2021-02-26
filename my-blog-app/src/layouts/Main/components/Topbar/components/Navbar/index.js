@@ -38,47 +38,47 @@ const NavBar = (props) => {
       };
 
     return(
-            <>
-                <IconButton 
-                    className={classes.menuButton} 
-                    color="inherit" 
-                    aria-label="menu"
-                    onClick={() => props.handleOpenToggle()}
-                >
-                    <MenuIcon />
-                </IconButton>
-                <Typography 
-                    variant="h6" 
-                    color="inherit"
-                    className={classes.title}
-                >
-                    <Button
-                        color="inherit"
-                        onClick={handleRedirectHomeClick}
-                    >
-                     Reina Marla   
-                    </Button>
-                </Typography>
-                <Button
-                    color="inherit"
-                    {...rest}
-                    className={clsx(classes.root, className)}
-                >
-                    {pages.map(page => (
-                        <Hidden xsDown>
-                            <Button
-                                color="inherit"
-                                component={CustomRouterLink}
-                                to={page.href}
-                            >
-                            <div>
-                                {page.title}
-                            </div>
-                            </Button>
-                        </Hidden>
-                    ))}
-                </Button>
-         </>       
+        <>
+            <IconButton 
+                className={classes.menuButton} 
+                color="inherit" 
+                aria-label="menu"
+                onClick={() => props.handleOpenToggle()}
+            >
+                <MenuIcon />
+            </IconButton>
+            <Typography 
+                variant="h6" 
+                color="inherit"
+                className={classes.title}
+            >
+            <Button
+                color="inherit"
+                onClick={handleRedirectHomeClick}
+            >
+                Reina Marla   
+            </Button>
+            </Typography>
+            <Button
+                color="inherit"
+                {...rest}
+                className={clsx(classes.root, className)}
+            >
+                {pages.map(page => (
+                    <Hidden xsDown>
+                        <Button
+                            color="inherit"
+                            component={CustomRouterLink}
+                            to={page.href}
+                        >
+                        <div>
+                            {page.title}
+                        </div>
+                        </Button>
+                    </Hidden>
+                ))}
+            </Button>
+        </>       
     )
 }
 
