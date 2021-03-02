@@ -5,7 +5,7 @@ import Posts from './components/Posts';
 
 const useStyles = makeStyles((theme) => ({
   grid: {
-    marginBottom: "5vh",
+    marginBottom: "10vh",
   },
   item: {
     [theme.breakpoints.down("md")]: {
