@@ -1,89 +1,44 @@
-import React, { useState } from 'react';
-import { makeStyles, Hidden } from '@material-ui/core';
-import NavBar from './components/Navbar';
-import Drawer from './components/Drawer';
-import CarouselComp from './components/Carousel';
-import Card from './components/Card';
+import React from 'react';
+import { makeStyles, Grid } from '@material-ui/core';
+import Carousel from './components/Carousel';
+import Posts from './components/Posts';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    boxShadow: 'none',
-    marginRight:"0vw",
+const useStyles = makeStyles((theme) => ({
+  grid: {
+    marginBottom: "10vh",
   },
-  flexGrow: {
-    flexGrow: "1",
-  },toolbar: theme.mixins.toolbar,
-  content: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
-    padding: theme.spacing(3),
+  item: {
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+      marginLeft:"7vh",
+      marginRight:"10vh",
+    },
+    [theme.breakpoints.down("lg")]: {
+      display: "flex",
+      marginLeft:"5vh",
+      marginRight:"5vh",
+    },
+    [theme.breakpoints.down("xl")]: {
+      display: "flex",
+      marginTop:"5vh",
+      marginLeft:"5vh",
+      marginRight: "5vh",
+    },
   },
-  card: {
-    width: "100%",
-    height: "200px",
-    background: "#333",
-    color: "#fff",
-    fontSize: "30px",
-    margin: "0 20px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  }
-}))
-
-const pages = [
-    {
-      title: 'Secciones',
-      href: '/sections',
-    },
-    {
-      title: 'Comunidad',
-      href: '/community',
-    },
-    {
-      title: 'Institucional',
-      href: '/institutional',
-    },
-    {
-      title: 'Contactanos',
-      href: '/contact',
-    }
-  ];
+}));
 
 const Home = () => {
-    const classes = useStyles();
-    const [open, setOpen] = useState(false);
-    
-    const handleOpenToggle = () => {
-        setOpen(!open);
-      };
-
+  const classes = useStyles();
+  
     return(
-        <div className={classes.root}>
-            <NavBar 
-            pages={pages}
-            handleOpenToggle={handleOpenToggle}/>
-            {/* <Hidden xsDown>
-                <Drawer
-                    pages={pages}
-                    variant="permanent"
-                    open={true}
-                />
-            </Hidden>  */}
-            <Hidden mdUp>
-                <Drawer
-                    pages={pages}
-                    variant="temporary"
-                    open={open}
-                    onClose={handleOpenToggle}
-                />
-            </Hidden>
-            <div className={classes.content}>
-                <div className={classes.toolbar}></div>
-                <CarouselComp>
-                </CarouselComp>
-            </div>
-        </div>
+        <Grid contanier className={classes.grid}>
+          <Grid item>
+            <Carousel/>
+          </Grid> 
+          <Grid item className={classes.item}>
+            <Posts />
+          </Grid>
+        </Grid>
     )
 }
 

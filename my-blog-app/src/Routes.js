@@ -1,22 +1,23 @@
-import { Switch, Redirect, Route } from "react-router-dom";
-import {
-  Home,
-  Institutional,
-} from "./views";
+import { Switch, Redirect } from 'react-router-dom';
+import { RouteWithLayout } from './components';
+import { Main } from './layouts';
+import { Home, Institutional } from './views';
 
 const Routes = () => {
   return (
     <Switch>
       <Redirect exact from="/" to="/home" />
-      <Route component={Home} exact  path="/home" />
-      <Route
+      <RouteWithLayout component={Home} exact layout={Main} path="/home" />
+      <RouteWithLayout
         component={Home}
         exact
+        layout={Main}
         path="/home"
       />
-      <Route
+      <RouteWithLayout
         component={Institutional}
         exact
+        layout={Main}
         path="/institutional"
       />
       <Redirect to="/not-found" />
@@ -25,4 +26,3 @@ const Routes = () => {
 };
 
 export default Routes;
-
