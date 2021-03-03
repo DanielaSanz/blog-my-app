@@ -10,29 +10,14 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    [theme.breakpoints.down("md")]: {
-      maxWidth: 900,
-    },
-    [theme.breakpoints.down("lg")]: {
-      maxWidth: 435,
-    },
-    [theme.breakpoints.down("xl")]: {
-      maxWidth: "100%",
-    },
-    maxWidth: 345,
+    maxWidht: 400,
   },
   media: {
-    [theme.breakpoints.down("md")]: {
-      height: 240,
-    },
-    [theme.breakpoints.down("xl")]: {
-      height: 240,
-    },
     height: 140,
   },
 }));
 
-function Post() {
+const Post = ({ post }) => {
   const classes = useStyles();
 
   return (
@@ -45,7 +30,7 @@ function Post() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            1
+            {post.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Lizards are a widespread group of squamate reptiles, with over 6,000
@@ -58,7 +43,7 @@ function Post() {
           {/* Cuando haga clic en algun lado (el que quieran) hacer algo */}
           Share
         </Button>
-        <Button size="small" color="primary" >
+        <Button size="small" color="primary">
           Learn More
         </Button>
       </CardActions>

@@ -3,46 +3,47 @@ import { AppBar, Toolbar } from '@material-ui/core';
 import { Navbar, Drawer } from './components';
 
 const pages = [
-    {
-      title: 'Secciones',
-      href: '/sections',
-    },
-    {
-      title: 'Comunidad',
-      href: '/community',
-    },
-    {
-      title: 'Institucional',
-      href: '/institutional',
-    },
-    {
-      title: 'Contactanos',
-      href: '/contact',
-    }
-  ];
+  {
+    title: 'Secciones',
+    href: '/sections',
+  },
+  {
+    title: 'Comunidad',
+    href: '/community',
+  },
+  {
+    title: 'Institucional',
+    href: '/institutional',
+  },
+  {
+    title: 'Contactanos',
+    href: '/contact',
+  },
+];
 
 const Topbar = () => {
-    const [open, setOpen] = useState(false);
+  
+  const [open, setOpen] = useState(false);
     
-    const handleOpenToggle = () => {
-        setOpen(!open);
-      };
+  const handleOpenToggle = () => {
+    setOpen(!open);
+  };
 
-    return(
-      <AppBar>
-        <Toolbar>
-          <Navbar 
-            pages={pages}
-            handleOpenToggle={handleOpenToggle}/>
-          <Drawer
-            pages={pages}
-            variant="temporary"
-            open={open}
-            onClose={handleOpenToggle}
-          />
-        </Toolbar>
-      </AppBar>
-    )
+  return(
+    <AppBar >
+      <Toolbar>
+        <Navbar 
+          pages={pages}
+          handleOpenToggle={handleOpenToggle}/>
+        <Drawer
+          pages={pages}
+          variant="temporary"
+          open={open}
+          onClose={handleOpenToggle}
+        />
+      </Toolbar>
+    </AppBar>
+  )
 }
 
 export default Topbar;

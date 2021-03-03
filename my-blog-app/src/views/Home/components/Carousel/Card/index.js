@@ -8,7 +8,7 @@ const useStyles = makeStyles (theme => ({
         background: "#333",
         color: "#fff",
         fontSize: "30px",
-        margin: "0 20px",
+        margin: "inherit",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
