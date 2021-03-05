@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles, Grid } from '@material-ui/core';
 import Carousel from './components/Carousel';
 import Posts from './components/Posts';
-import { PostsContext } from "../../context/posts/posts.provider";
+import usePosts from "../../hooks/usePosts";
 
 const useStyles = makeStyles((theme) => ({
   cont: {
@@ -22,22 +22,20 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
   const classes = useStyles();
+
+  const { data } = usePosts();
   
     return(
       <>
         <Carousel/>  
-        <PostsContext.Consumer>
-          {(context) => {
-  
-            return (
-              <>
-                <Grid className={classes.cont}>
-                  <Posts posts={context.posts}/>
-                </Grid>
-              </>
-            );
-          }}
-        </PostsContext.Consumer>   
+        <>
+          {
+            data ? 
+              <Grid className={classes.cont}>
+                <Posts posts={data}/>
+              </Grid> : null
+          } 
+        </>        
       </>
     );
 };

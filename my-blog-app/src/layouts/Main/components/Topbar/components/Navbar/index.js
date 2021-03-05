@@ -35,7 +35,7 @@ const NavBar = (props) => {
     const history = useHistory();
 
     const handleRedirectHomeClick = () => {
-        history.push(`home`);
+        history.push(`/home`);
       };
 
     return(

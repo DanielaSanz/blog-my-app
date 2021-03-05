@@ -16,7 +16,7 @@ const Comp = (props) => {
 
   return (
     <>
-        <Grid container spacing={4}>
+      <Grid container spacing={4}>
         {group.map((post) => (
           <>
             {showPost(post)}
@@ -35,7 +35,7 @@ const Posts = ({ posts }) => {
         chunk(posts,3).map((groupOfThree) => {
           return (
             <Comp
-            group={groupOfThree}
+              group={groupOfThree}
             />
           ) 
         })

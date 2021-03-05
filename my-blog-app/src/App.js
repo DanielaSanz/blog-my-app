@@ -4,18 +4,21 @@ import { createBrowserHistory } from 'history';
 import Routes from './Routes';
 import { ThemeProvider} from '@material-ui/core';
 import theme from './theme';
-import PostsProvider from "./context/posts/posts.provider";
+import { ReactQueryDevtools } from "react-query/devtools";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const browserHistory = createBrowserHistory();
+const queryClient = new QueryClient();
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <PostsProvider>
+      <QueryClientProvider client={queryClient}>
         <Router history={browserHistory}>
           <Routes/>
         </Router> 
-      </PostsProvider>  
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>  
     </ThemeProvider>
   );
 }
