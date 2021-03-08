@@ -1,7 +1,7 @@
 import { Switch, Redirect } from 'react-router-dom';
 import { RouteWithLayout } from './components';
 import { Main } from './layouts';
-import { Home, Institutional, Posts } from './views';
+import { Home, Institutional, PostsView } from './views';
 
 const Routes = () => {
   return (
@@ -21,7 +21,7 @@ const Routes = () => {
         path="/institutional"
       />
       <RouteWithLayout
-        component={Posts}  
+        component={PostsView}  
         exact
         layout={Main}
         path="/posts/:id"

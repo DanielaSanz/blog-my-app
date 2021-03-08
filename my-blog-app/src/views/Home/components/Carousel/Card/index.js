@@ -14,7 +14,7 @@ const useStyles = makeStyles (theme => ({
         alignItems: "center",
       
     },
-  }));
+}));
 
 const Card = ({ number }) => {
     const classes = useStyles();

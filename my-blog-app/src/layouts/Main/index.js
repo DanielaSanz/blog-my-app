@@ -7,7 +7,6 @@ import { Topbar, Footer } from './components';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: "10vh",
     paddingTop: 56,
     height: "100%",
     [theme.breakpoints.up("sm")]: {

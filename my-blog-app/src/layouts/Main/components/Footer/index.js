@@ -10,8 +10,6 @@ const useStyles = makeStyles(theme => ({
     background: "#eceff1",
     widht: "100%",
     
-  },
-  grid: {
   }, 
   socialMedia: {
     position: "relative",
@@ -42,13 +40,12 @@ const Footer = props => {
               href="https://devias.io/"
               target="_blank"
             >
-              Devias IO
+              Reina Marla
             </Link>
               . 2021
           </Typography>
           <Typography variant="caption" color="inherit">
-            Created with love for the environment. By designers and developers who
-            love to work together in offices!
+            Creado por Daniela Sanchez, desarrollos hechos con amor.
           </Typography>
         </Grid>
         <Grid item className={classes.socialMedia} sm={6}>

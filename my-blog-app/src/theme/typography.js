@@ -5,16 +5,16 @@ export default {
   h1: {
     color: palette.text.primary,
     fontWeight: 500,
-    fontSize: '50px',
+    fontSize: '70px',
     letterSpacing: '-0.24px',
-    lineHeight: '40px'
+    lineHeight: '90px'
   },
   h2: {
     color: palette.text.primary,
     fontWeight: 500,
-    fontSize: '29px',
+    fontSize: '35px',
     letterSpacing: '-0.24px',
-    lineHeight: '32px'
+    lineHeight: '45px'
   },
   h3: {
     color: palette.text.primary,
@@ -26,9 +26,9 @@ export default {
   h4: {
     color: palette.text.primary,
     fontWeight: 500,
-    fontSize: '20px',
+    fontSize: '24px',
     letterSpacing: '-0.06px',
-    lineHeight: '24px'
+    lineHeight: '32px'
   },
   h5: {
     color: palette.text.primary,

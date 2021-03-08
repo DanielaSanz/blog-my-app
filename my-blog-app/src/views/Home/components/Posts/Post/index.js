@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,7 +46,6 @@ const Post = ({ post }) => {
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          {/* Cuando haga clic en algun lado (el que quieran) hacer algo */}
           Share
         </Button>
         <Button size="small" color="primary" onClick={handleLearnMoreClick}>
