@@ -29,9 +29,7 @@ const CustomRouterLink = forwardRef((props, ref) => (
 
 const NavBar = (props) => {
     const {pages, className, ...rest} = props;
-
     const classes = useStyles();
-
     const history = useHistory();
 
     const handleRedirectHomeClick = () => {
@@ -72,9 +70,9 @@ const NavBar = (props) => {
                             component={CustomRouterLink}
                             to={page.href}
                         >
-                        <div>
-                            {page.title}
-                        </div>
+                            <div>
+                                {page.title}
+                            </div>
                         </Button>
                     </Hidden>
                 ))}

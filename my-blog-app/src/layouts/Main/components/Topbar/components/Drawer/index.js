@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme =>({
         width: 240,
     },
     toolbar: theme.mixins.toolbar,
-}))
+}));
 
 const CustomRouterLink = forwardRef((props, ref) => (
     <div
@@ -32,34 +32,34 @@ const DrawerComp = (props) => {
     return(
         <Hidden smUp>
             <Drawer 
-            className={classes.drawer}
-            classes={{
-                paper: classes.drawerPaper,
-            }}
-            anchor="left"
-            variant={props.variant}
-            open={props.open}
+                className={classes.drawer}
+                classes={{
+                    paper: classes.drawerPaper,
+                }}
+                anchor="left"
+                variant={props.variant}
+                open={props.open}
             onClose={props.onClose ? props.onClose : null}
-        >
+            >
             <div className={classes.toolbar}></div>
             <Divider/>
-            <List
-                {...rest}
-                className={clsx(classes.root, className)}
-             >
-                {pages.map(page => (
-                    <Button
-                        color="inherit"
-                        component={CustomRouterLink}
-                        to={page.href}
-                    >
-                        <div>
-                            {page.title}
-                        </div>
-                    </Button>
-                 ))}
-            </List>
-        </Drawer>
+                <List
+                    {...rest}
+                    className={clsx(classes.root, className)}
+                >
+                    {pages.map(page => (
+                        <Button
+                            color="inherit"
+                            component={CustomRouterLink}
+                            to={page.href}
+                        >
+                            <div>
+                                {page.title}
+                            </div>
+                        </Button>
+                    ))}
+                </List>
+            </Drawer>
         </Hidden>
     )
 }

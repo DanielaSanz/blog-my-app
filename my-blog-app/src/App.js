@@ -4,8 +4,8 @@ import { createBrowserHistory } from 'history';
 import Routes from './Routes';
 import { ThemeProvider} from '@material-ui/core';
 import theme from './theme';
-import { ReactQueryDevtools } from "react-query/devtools";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const browserHistory = createBrowserHistory();
 const queryClient = new QueryClient();
