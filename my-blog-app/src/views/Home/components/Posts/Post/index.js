@@ -23,7 +23,7 @@ const Post = ({ post }) => {
   const history = useHistory();
 
   const handleLearnMoreClick = () => {
-    history.push(`posts/${post.id}`);
+    history.push(`posts/${post._id}`);
   };
 
   return (
@@ -36,11 +36,10 @@ const Post = ({ post }) => {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {post.name}
+            {post.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {post.preface}
           </Typography>
         </CardContent>
       </CardActionArea>

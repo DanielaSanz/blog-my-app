@@ -44,13 +44,13 @@ const PostView = () => {
         <Grid>
           <div className={classes.title} >
             <Typography variant="h1" color="textPrimary" component="h1">
-              {data.name}
+              {data.title}
             </Typography>
-            <Typography variant="h2" color="textPrimary" component="h2">
-              {data.email}
+            <Typography variant="h4" color="text" component="h4">
+              {data.date}
             </Typography>
             <Typography variant="h3" color="textPrimary" component="h2">
-              {data.email}
+              {data.preface}
             </Typography>
           </div>
           <hr/>  
@@ -66,7 +66,7 @@ const PostView = () => {
           </Grid> 
           <div>
           <Typography variant="h3" color="textSecondary" component="h2">
-              Por Daniela Sanchez
+              {data.author}
             </Typography>
           </div>  
           <hr/>    
