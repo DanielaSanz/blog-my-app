@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 const getPost = (postId) => {
   
   return axios
-    .get(`https://jsonplaceholder.typicode.com/users/${postId}`)
+    .get(`http://localhost:4000/api/posts/${postId}`)
     .then((response) => response.data)
     .catch((error) => {
       console.error("TODO ESTA MAL");

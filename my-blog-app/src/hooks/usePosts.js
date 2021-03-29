@@ -3,13 +3,13 @@ import { useQuery } from 'react-query';
 
 const getPosts = () =>
   axios
-    .get("https://jsonplaceholder.typicode.com/users")
+    .get("http://localhost:4000/api/posts")
     .then((response) => {
       console.log(response.data)
       return response.data;
     })
     .catch((error) => {
-      console.error("TODO ESTA MAL");
+      console.error("Ocurrio un error al intentar traer los posts");
     });
 
 export default function usePosts() {
