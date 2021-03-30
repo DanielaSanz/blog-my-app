@@ -12,8 +12,9 @@ async function getPosts(req, res, next) {
 
 async function createPost(req, res, next) {
     try {
-    const { title, preface, body, author, date } = req.body;
-    const newPost = new PostModel( {
+    const { seccion, title, preface, body, author, date } = req.body;
+    const newPost = new PostModel({
+        "seccion": seccion,
         "title": title,
         "preface": preface,
         "body": body,
@@ -43,8 +44,9 @@ async function getPost(req, res, next) {
 async function updatePost(req, res, next) {
     try {
         console.log(req.params.id, req.body)
-        const { title, preface, body, author, date } = req.body;
+        const { seccion, title, preface, body, author, date } = req.body;
         const post = await PostModel.findByIdAndUpdate(req.params.id, {
+            "seccion": seccion,
             "title": title,
             "preface": preface,
             "body": body,

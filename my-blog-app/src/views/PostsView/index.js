@@ -6,26 +6,38 @@ import images from '../../assets/images';
 
 const useStyles = makeStyles (theme => ({
   cont: {
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(2),
+      display:"block",
+      marginLeft: "2vh",
+      marginRight: "2vh",
+    },
     padding: theme.spacing(4),
+    marginLeft: "7vh",
+    marginRight: "7vh",
   },
 card: {
   display: "flex",
   width: "100%",
-  marginBottom: "5vh",
+  marginTop: "3vh",
+  marginBottom: "3vh",
   height: "400px",
   background: "black",
-  color: "#fff",
-  fontSize: "30px",
-  
+  fontSize: "30px"
 },
 img: {
   display: "flex",
-  height: "100%",
-  width: "100%" 
+  height: "400px",
+  width: "100%"
 },
 title: {
-  marginBottom: "1vh",
   width: "100%" ,
+},
+preface: {
+  marginTop: "5vh",
+},
+date: {
+  marginTop:"3vh",
 },
 box: {
   marginTop:"5vh",
@@ -40,30 +52,37 @@ const PostView = () => {
 
   return (
     <Grid className={classes.cont}>
+     
       { data ? 
         <Grid>
+          <div>
+          <Typography variant="h2" color="warning" component="h1">
+              {data.seccion}
+            </Typography>
+          </div>
           <div className={classes.title} >
             <Typography variant="h1" color="textPrimary" component="h1">
               {data.title}
             </Typography>
-            <Typography variant="h4" color="text" component="h4">
-              {data.date}
-            </Typography>
-            <Typography variant="h3" color="textPrimary" component="h2">
-              {data.preface}
-            </Typography>
+            <div className={classes.preface}>
+              <Typography variant="h4" color="textPrimary" component="h2">
+                {data.preface}
+              </Typography>
+            </div>
+            <div className={classes.date}>
+              <Typography variant="h5" color="text" component="h4">
+                {data.date}
+              </Typography>
+            </div>
           </div>
-          <hr/>  
+          <hr/> 
           <Grid className={classes.card}>
-            <Box style={{ width: "100%" }}>
               <img
                 alt="imag"
-                style={{ width: "100%" }}
-                className={classes.img}
                 src={images.img}
-              />
-            </Box>    
-          </Grid> 
+                className={classes.img}
+              />    
+          </Grid>           
           <div>
           <Typography variant="h3" color="textSecondary" component="h2">
               {data.author}
@@ -100,6 +119,7 @@ const PostView = () => {
           </div>
         </Grid> : null
       }        
+     
     </Grid>
   )    
 } 

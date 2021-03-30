@@ -1,6 +1,10 @@
 const { Schema, model } = require('mongoose');
 
 const postSchema = new Schema({
+    seccion: {
+        type: String,
+        allowNull: false
+    },
     title: {
         type: String,
         allowNull: false

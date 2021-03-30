@@ -10,7 +10,7 @@ export default {
     lineHeight: '90px'
   },
   h2: {
-    color: palette.text.primary,
+    color: "#ff7f50",
     fontWeight: 500,
     fontSize: '35px',
     letterSpacing: '-0.24px',

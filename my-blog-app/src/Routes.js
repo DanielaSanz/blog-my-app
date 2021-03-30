@@ -1,7 +1,7 @@
 import { Switch, Redirect } from 'react-router-dom';
 import { RouteWithLayout } from './components';
 import { Main } from './layouts';
-import { Home, Institutional, PostsView } from './views';
+import { Home, Contact, Institutional, PostsView } from './views';
 
 const Routes = () => {
   return (
@@ -19,6 +19,12 @@ const Routes = () => {
         exact
         layout={Main}
         path="/institutional"
+      />
+      <RouteWithLayout
+        component={Contact}
+        exact
+        layout={Main}
+        path="/contact"
       />
       <RouteWithLayout
         component={PostsView}  

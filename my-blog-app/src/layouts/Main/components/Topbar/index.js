@@ -8,10 +8,6 @@ const pages = [
     href: '/sections',
   },
   {
-    title: 'Comunidad',
-    href: '/community',
-  },
-  {
     title: 'Institucional',
     href: '/institutional',
   },
@@ -35,6 +31,7 @@ const Topbar = () => {
         <Navbar 
           pages={pages}
           handleOpenToggle={handleOpenToggle}/>
+          <div>Login</div>
         <Drawer
           pages={pages}
           variant="temporary"
