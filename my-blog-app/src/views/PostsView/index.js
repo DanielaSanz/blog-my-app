@@ -1,8 +1,9 @@
 import React from 'react';
-import { makeStyles, Grid, Box, Typography } from '@material-ui/core';
+import { makeStyles, Grid, Typography } from '@material-ui/core';
 import { useParams } from 'react-router-dom';
 import usePost from '../../hooks/usePost';
 import images from '../../assets/images';
+import { DiscussionEmbed } from 'disqus-react';
 
 const useStyles = makeStyles (theme => ({
   cont: {
@@ -42,7 +43,10 @@ date: {
 box: {
   marginTop:"5vh",
   textAlign: "justify"
-},   
+}, 
+seccion: {
+  marginTop:"10vh",
+},  
 }));
 
 const PostView = () => {
@@ -119,7 +123,19 @@ const PostView = () => {
           </div>
         </Grid> : null
       }        
-     
+      <div className={classes.seccion}>
+        <DiscussionEmbed
+          shortname="my-blog-app"
+          config={
+            {
+              url: "http://localhost:4000/api/posts/?",
+              identifier: "http://localhost:4000/api/posts/($id)",
+              title: "Comment post",
+              language: 'es_MX' //e.g. for Traditional Chinese (Taiwan)	
+            }
+          }
+        />
+      </div>
     </Grid>
   )    
 } 

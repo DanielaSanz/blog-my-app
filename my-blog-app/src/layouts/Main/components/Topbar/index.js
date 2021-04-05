@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar } from '@material-ui/core';
 import { Navbar, Drawer } from './components';
+import { GoogleLogin } from 'react-google-login';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+
+const responseGoogle = (response) => {
+  console.log(response);
+  console.log(response.profileObj)
+}
 
 const pages = [
   {
@@ -31,7 +38,16 @@ const Topbar = () => {
         <Navbar 
           pages={pages}
           handleOpenToggle={handleOpenToggle}/>
-          <div>Login</div>
+          <GoogleLogin
+            clientId="383880074081-ng4cmrc3mldvsr2v7kg58db4rgfmag6b.apps.googleusercontent.com"
+            //buttonText="Login"
+            render={renderProps => (
+              <AccountCircleIcon onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</AccountCircleIcon>
+            )}
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            cookiePolicy={'single_host_origin'}
+          />
         <Drawer
           pages={pages}
           variant="temporary"
