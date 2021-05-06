@@ -33,7 +33,7 @@ const Topbar = () => {
   };
 
   return(
-    <AppBar >
+    <AppBar>
       <Toolbar>
         <Navbar 
           pages={pages}
@@ -47,7 +47,7 @@ const Topbar = () => {
             onSuccess={responseGoogle}
             onFailure={responseGoogle}
             cookiePolicy={'single_host_origin'}
-          />
+          /> 
         <Drawer
           pages={pages}
           variant="temporary"
